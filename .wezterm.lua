@@ -15,4 +15,15 @@ config.window_frame = {
 config.window_decorations = 'RESIZE'
 config.window_close_confirmation = 'NeverPrompt'
 
+config.initial_rows = 24
+config.initial_cols = 80
+
+config.keys = {
+  {
+    key = 'f',
+    mods = 'CMD|CTRL',
+    action = wezterm.action.ToggleFullScreen,
+  },
+}
+
 return config
