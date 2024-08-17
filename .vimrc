@@ -4,6 +4,9 @@ syntax on
 " Enable spellcheck
 set spell
 
+highlight clear SpellBad
+highlight SpellBad term=underline cterm=underline gui=underline
+
 " Show line numbers
 set number
 
