@@ -16,6 +16,7 @@ config.window_frame = {
 
 config.window_decorations = 'RESIZE'
 config.window_close_confirmation = 'NeverPrompt'
+config.show_tab_index_in_tab_bar = false
 
 config.initial_rows = 24
 config.initial_cols = 80
@@ -27,7 +28,6 @@ config.keys = {
     action = wezterm.action.ToggleFullScreen,
   },
 }
-
 
 wezterm.on('update-status', function(window)
   local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
@@ -44,6 +44,5 @@ wezterm.on('update-status', function(window)
     { Text = ' ' .. wezterm.strftime('%a, %b %-d | %H:%M') .. ' ' },
   }))
 end)
-
 
 return config
