@@ -1,0 +1,1 @@
+alias yt-audio="yt-dlp -x --audio-format m4a --write-thumbnail --embed-thumbnail "
