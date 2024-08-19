@@ -28,6 +28,7 @@ config.keys = {
     action = wezterm.action.ToggleFullScreen,
   },
 }
+config.native_macos_fullscreen_mode = true
 
 wezterm.on('update-status', function(window)
   local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
