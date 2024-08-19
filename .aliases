@@ -9,3 +9,4 @@ alias dsss="docker-sync-stack start"
 
 # Misc.
 alias yt-audio="yt-dlp -x --audio-format m4a --write-thumbnail --embed-thumbnail "
+alias ls='ls --color=auto'
