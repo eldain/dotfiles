@@ -1,1 +1,11 @@
+# Git
+alias gpp="git pull --prune"
+alias gl="git log --oneline -n"
+alias gcm='git checkout $(git rev-parse --verify main &>/dev/null && echo "main" || echo "master")'
+alias gc-='git checkout -'
+
+# Docker
+alias dsss="docker-sync-stack start"
+
+# Misc.
 alias yt-audio="yt-dlp -x --audio-format m4a --write-thumbnail --embed-thumbnail "
