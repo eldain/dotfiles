@@ -2,6 +2,7 @@
 alias gpp="git pull --prune"
 alias gl="git log --oneline -n"
 alias gcm='git checkout $(git rev-parse --verify main &>/dev/null && echo "main" || echo "master")'
+alias gcam='git commit -am "$(date +"%Y-%m-%d %H:%M:%S")"'
 alias gmm='git merge $(git rev-parse --verify main &>/dev/null && echo "main" || echo "master")'
 alias gc-='git checkout -'
 alias gsp="git stash pop"
