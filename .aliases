@@ -1,5 +1,6 @@
 # Git
 alias gc-='git checkout -'
+alias gcam='git commit -am "$(date +"%Y-%m-%d %H:%M:%S")"'
 alias gcm='git checkout $(git rev-parse --verify main &>/dev/null && echo "main" || echo "master")'
 alias gl="git log --oneline -n"
 alias gmm='git merge $(git rev-parse --verify main &>/dev/null && echo "main" || echo "master")'

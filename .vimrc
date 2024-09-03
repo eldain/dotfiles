@@ -10,6 +10,18 @@ highlight SpellBad term=underline cterm=underline gui=underline
 " Show line numbers
 set number
 
+" Set the text width to 80 characters
+set textwidth=80
+
+" Enable automatic word wrapping
+set wrap
+
+" Wrap at word boundaries rather than exactly at the textwidth
+set linebreak
+
+" Show a vertical line at the textwidth column
+" set colorcolumn=+1
+
 " Auto indent
 set autoindent
 set smartindent
