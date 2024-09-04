@@ -43,6 +43,34 @@ nnoremap L $
 " Show underline on line with cursor
 set cursorline
 
+" Ensure default status line is dark with white text for the current window and dark gray for non-current windows
+highlight StatusLine guifg=#ffffff guibg=#000000    " White text, black background for the active window
+highlight StatusLineNC guifg=#808080 guibg=#000000  " Gray text, black background for non-active windows
+
+" Define highlight groups for each mode with a dark background and a11y-friendly text colors
+highlight StatusLineNormal guifg=#ffffff guibg=#000000 " White text for Normal mode
+highlight StatusLineInsert guifg=#00ff00 guibg=#000000 " Bright green text for Insert mode
+highlight StatusLineVisual guifg=#ffcc00 guibg=#000000 " Yellow text for Visual mode
+highlight StatusLineReplace guifg=#ff0000 guibg=#000000 " Red text for Replace mode
+
+" Function to set the highlights for status line, MsgArea, and ModeMsg
+function! SetStatusAndCmdlineColor(fg, bg)
+  execute 'highlight StatusLine guifg=' . a:fg . ' guibg=' . a:bg
+  execute 'highlight MsgArea guifg=' . a:fg . ' guibg=' . a:bg
+  execute 'highlight ModeMsg guifg=' . a:fg . ' guibg=' . a:bg
+  redrawstatus
+endfunction
+
+" Ensure the status line and mode line change colors depending on the mode
+augroup StatusLineModeColors
+  autocmd!
+  autocmd VimEnter * call SetStatusAndCmdlineColor('#ffffff', '#000000') " Normal mode colors on start
+  autocmd ModeChanged *:[n] call SetStatusAndCmdlineColor('#ffffff', '#000000') " Normal mode
+  autocmd ModeChanged *:[i] call SetStatusAndCmdlineColor('#00ff00', '#000000') " Insert mode
+  autocmd ModeChanged *:[vV] call SetStatusAndCmdlineColor('#ffcc00', '#000000') " Visual mode
+  autocmd ModeChanged *:[R] call SetStatusAndCmdlineColor('#ff0000', '#000000') " Replace mode
+augroup END
+
 " Quickly toggle cursor line
 nnoremap <leader>cl :set cursorline!<CR>
 
