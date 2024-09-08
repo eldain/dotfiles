@@ -19,9 +19,6 @@ config.window_close_confirmation = 'NeverPrompt'
 config.show_tab_index_in_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
-config.initial_rows = 24
-config.initial_cols = 80
-
 config.keys = {
   {
     key = 'f',
