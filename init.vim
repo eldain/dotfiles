@@ -26,6 +26,12 @@ set linebreak
 set autoindent
 set smartindent
 
+" Highlight yanked text for better visual feedback
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({timeout = 240})
+augroup END
+
 " Highlight search matches and incremental search
 set hlsearch
 set incsearch
